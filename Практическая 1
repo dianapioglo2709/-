@@ -1,0 +1,127 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+
+
+	// перменная int
+	int a = 10;
+	cout << a << endl;
+	int l = 20;
+	cout << l << endl;
+	int q = 70;
+	cout << q << endl;
+	int an = 90;
+	cout << an << endl;
+	int z = 100;
+	cout << z << endl;
+	int p = 110;
+	cout << p << endl;
+	int g = 120;
+	cout << g << endl;
+	int y = 170;
+	cout << y << endl;
+	int j = 210;
+	cout << j << endl;
+	int m = 600;
+	cout << m << endl;
+
+
+	// переменная short
+	short q = 11;
+	cout << q << endl;
+	short w = 41;
+	cout << w << endl;
+	short e = 161;
+	cout << e << endl;
+	short r = 21;
+	cout << r << endl;
+	short t = 91;
+	cout << t << endl;
+	short t = 111;
+	cout << t << endl;
+	short y = 141;
+	cout << y << endl;
+	short u = 161;
+	cout << u << endl;
+	short i = 181;
+	cout << i << endl;
+	short k = 1211;
+	cout << k << endl;
+
+	// переменная float
+	float h1 = 1.4;
+	cout << h1 << endl;
+	float h2 = 3.5;
+	cout << h2 << endl;
+	float h3 = 5.5;
+	cout << h3 << endl;
+	float h4 = 6.7;
+	cout << h4 << endl;
+	float h5 = 7.1;
+	cout << h5 << endl;
+	float h6 = 8.2;
+	cout << h6 << endl;
+	float h7 = 11.5;
+	cout << h7 << endl;
+	float h8 = 12.3;
+	cout << h8 << endl;
+	float h9 = 16.7;
+	cout << h9 << endl;
+	float h10 = 19.6;
+	cout << h10 << endl;
+
+
+	// переменная double
+	
+	double q1 = 18.20;
+	cout << q1 << endl;
+	double q2 = 28.10;
+	cout << q2 << endl;
+	double q3 = 43.40;
+	cout << q3 << endl;
+	double q4 = 11.50;
+	cout << q4 << endl;
+	double q5 = 80.100;
+	cout << q5 << endl;
+	double q6 = 54.60;
+	cout << q6 << endl;
+	double q7 = 86.11;
+	cout << q7 << endl;
+	double q8 = 29.16;
+	cout << q8 << endl;
+	double q9 = 125.277;
+	cout << q9 << endl;
+	double q10 = 111.40;
+	cout << q10 << endl;
+
+
+	// переменная char
+	char w1 = '!';
+	cout << w1 << endl;
+	char w2 = '@';
+	cout << w2 << endl;
+	char w3 = '#';
+	cout << w3 << endl;
+	char w4 = '$';
+	cout << w4 << endl;
+	char w5 = '%';
+	cout << w5 << endl;
+	char w6 = '^';
+	cout << w6 << endl;
+	char w7 = '&';
+	cout << w7 << endl;
+	char w8 = '*';
+	cout << w8 << endl;
+	char w9 = '(';
+	cout << w9 << endl;
+	char w10 = ')';
+	cout << w10 << endl;
+
+
+
+
+		   int _;
+		   cin >> _;
+		   return 0;
+	}
