@@ -1,0 +1,206 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "Rus");
+	int chislo;
+	int switchval;
+	string sep = "Сентябрь";
+	string oct = "Октябрь";
+	string nov = "Ноябрь";
+	string dec = "Декабрь";
+	string yanv = "Январь";
+	string feb = "Февраль";
+	string mar = "Март";
+	string apr = "Апрель";
+	string may = "Май";
+	string jun = "Июнь";
+	string jul = "Июль";
+	string aug = "Август";
+
+	cout << "[ + ] Календарь";
+	cout << "\n[ 1 ] Январь";
+	cout << "\n[ 2 ] Февраль";
+	cout << "\n[ 3 ] Март";
+	cout << "\n[ 4 ] Апрель";
+	cout << "\n[ 5 ] Май";
+	cout << "\n[ 6 ] Июнь";
+	cout << "\n[ 7 ] Июль";
+	cout << "\n[ 8 ] Август";
+	cout << "\n[ 9 ] Сентябрь";
+	cout << "\n[ 10 ] Октябрь";
+	cout << "\n[ 11 ] Ноябрь";
+	cout << "\n[ 12 ] Декабрь";
+
+	cout << "\n\nВыберите месяц: ";
+
+
+
+	cin >> switchval;
+
+	switch (switchval) {
+
+		case 9:
+			cout << "Выбран месяц: " << sep << endl;
+			if (switchval == 9) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 30){
+				cout << "\nКалендарь: " << chislo << " " << sep;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 10:
+			cout << "Выбран месяц: " << oct << endl;
+			if (switchval == 10) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << oct;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 11:
+			cout << "Выбран месяц: " << nov << endl;
+			if (switchval == 11) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 30) {
+				cout << "\nКалендарь: " << chislo << " " << nov;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 12:
+			cout << "Выбран месяц: " << dec << endl;
+			if (switchval == 12) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << dec;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 1:
+			cout << "Выбран месяц: " <<yanv << endl;
+			if (switchval == 1) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << yanv;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 2:
+			cout << "Выбран месяц: " << feb << endl;
+			if (switchval == 2) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 28) {
+				cout << "\nКалендарь: " << chislo << " " << feb;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 3:
+			cout << "Выбран месяц: " << mar << endl;
+			if (switchval == 3) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << mar;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 4:
+			cout << "Выбран месяц: " << apr << endl;
+			if (switchval == 4) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 30) {
+				cout << "\nКалендарь: " << chislo << " " << apr;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 5:
+			cout << "Выбран месяц: " << may << endl;
+			if (switchval == 5) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << may;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 6:
+			cout << "Выбран месяц: " << jun << endl;
+			if (switchval == 6) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 30) {
+				cout << "\nКалендарь: " << chislo << " " << jun;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 7:
+			cout << "Выбран месяц: " << jul << endl;
+			if (switchval == 7) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << jul;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		case 8:
+			cout << "Выбран месяц: " << aug << endl;
+			if (switchval == 8) {
+				cout << "Выберите день: ";
+				cin >> chislo;
+			}
+			if (chislo >= 1 && chislo <= 31) {
+				cout << "\nКалендарь: " << chislo << " " << aug;
+			}
+			else {
+				cout << "Ошибка, перезапустите программу";
+			}
+			break;
+		default:
+			cout << "Не правильно введен номер месяца!";
+	}
+
+
+
+}
