@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    int menu;
+    int menu1;
+    int po;
+    char non;
+
+    while (true) {
+        cout << "Программа 'Геометрические фигуры'\n";
+        cout << "[1] Линия\n";
+        cout << "[0] Выход\n";
+        cout << "Выберите фигуру: ";
+        cin >> menu;
+
+        switch (menu) {
+        case 0:
+            cout << "Выход из программы...\n";
+            return 0;
+
+        case 1:
+            system("cls");
+            cout << "Фигура 'Линия'\n\n";
+            cout << "[1] Горизонтальная\n";
+            cout << "[2] Вертикальная\n\n";
+            cout << "Выберите тип: ";
+            cin >> menu1;
+
+            switch (menu1) {
+            case 1:
+                system("cls");
+                cout << "Длина линии: ";
+                cin >> po;
+                cout << "Символ линии: ";
+                cin >> non;
+
+                system("cls");
+                for (int i = 0; i < po; i++) {
+                    cout << non;
+                }
+                cout << endl;
+                break;
+            case 2:
+                system("cls");
+                cout << "Длина: ";
+                cin >> po;
+                cout << "Символ: ";
+                cin >> non;
+
+                system("cls");
+                for (int i = 0; i < po; i++) {
+                    cout << non << endl;
+                }
+                break;
+            default:
+                cout << "Такого пункта нет в меню\n\n";
+            }
+            break;
+
+
+            cout << "\nДля продолжения нажмите Enter...";
+            cin.ignore();
+            cin.get();
+            system("cls");
+        }
+        return 0;
+    }
+}
