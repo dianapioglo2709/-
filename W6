@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    double number;          
+    double sum = 0;        
+    int count = 0;          
+
+    cout << "[ + ] Введите число: ";
+    cin >> number;
+
+    while (number != 0) {
+        sum += number;      
+        count++;            
+
+        cout << "[ + ] Введите число: ";
+        cin >> number;
+    }
+
+    if (count > 0) {
+        double average = sum / count;
+        cout << "[ + ] Среднее арифметическое: " << average << endl;
+    }
+
+    return 0;
+}
