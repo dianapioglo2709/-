@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    int number;
+    bool Program = false;
+
+    cout << "[ + ] Цикл \"WHILE\"\n\n";
+
+    while (!Program) {
+        cout << "[ + ] Введите число: ";
+
+
+        if (number == 0) {
+            Program = true;
+            cout << "[ + ] Выход из программы...\n";
+            continue;
+        }
+
+        if (number < 1 || number > 15) {
+            cout << "[ ! ] Ошибка: число должно быть от 1 до 15!\n\n";
+            continue;
+        }
+
+        cout << "\n";
+
+        int counter = 1;
+        while (counter <= number) {
+            cout << "[ + ] Цикл отработал. Круг: " << counter << ".\n";
+            counter++;
+        }
+
+        cout << "\n";
+    }
+
+    return 0;
+}
