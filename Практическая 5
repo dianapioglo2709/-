@@ -1,0 +1,71 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    char operation;
+    double num1, num2, result;
+
+    cout << "КАЛЬКУЛЯТОР\n";
+    cout << "Доступные операции:\n";
+    cout << "  +  - сложение\n";
+    cout << "  -  - вычитание\n";
+    cout << "  *  - умножение\n";
+    cout << "  /  - деление\n";
+    cout << "  %  - остаток от деления\n";
+    cout << "===========================\n";
+
+    
+    cout << "Выберите операцию: ";
+    cin >> operation;
+
+    if (operation != '+' && operation != '-' &&
+        operation != '*' && operation != '/' &&
+        operation != '%') {
+        cout << "Ошибка: неизвестная операция!\n";
+        return 0;
+    }
+
+    cout << "Введите первое число: ";
+    cin >> num1;
+
+    cout << "Введите второе число: ";
+    cin >> num2;
+
+
+    if (operation == '+') {
+        result = num1 + num2;
+        cout << "[ + ] Результат: " << num1 << " + " << num2 << " = " << result << endl;
+    }
+    else if (operation == '-') {
+        result = num1 - num2;
+        cout << "[ - ] Результат: " << num1 << " - " << num2 << " = " << result << endl;
+    }
+    else if (operation == '*') {
+        result = num1 * num2;
+        cout << "[ * ] Результат: " << num1 << " * " << num2 << " = " << result << endl;
+    }
+    else if (operation == '/') {
+        if (num2 == 0.0) {
+            cout << "Ошибка: деление на ноль запрещено!\n";
+        }
+        else {
+            result = num1 / num2;
+            cout << "[ / ] Результат: " << num1 << " / " << num2 << " = " << result << endl;
+        }
+    }
+    else if (operation == '%') {
+        if (static_cast<int>(num2) == 0) {
+            cout << "Ошибка: деление на ноль запрещено!\n";
+        }
+        else {
+            result = static_cast<int>(num1) % static_cast<int>(num2);
+            cout << "[ % ] Результат: " << static_cast<int>(num1) << " % "
+                << static_cast<int>(num2) << " = " << static_cast<int>(result) << endl;
+            cout << "Примечание: для операции % используются целые части чисел\n";
+        }
+    }
+
+    return 0;
+}
