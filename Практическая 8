@@ -1,0 +1,98 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    
+    int choice, wordNumber;
+    bool Program = false;
+
+    while (!Program) {
+        cout << "[ + ] Переводчик\n\n";
+        cout << "[ 1 ] Русские слова\n";
+        cout << "[ 2 ] Английские слова\n\n";
+        cout << "[ 3 ] Выйти\n\n";
+        cout << "Выберите пункт меню: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1: 
+            cout << "\n[ + ] Переводчик \"Список русских слов\"\n\n";
+            cout << "[ 1 ] Дом\n";
+            cout << "[ 2 ] Дорога\n";
+            cout << "[ 3 ] Книга\n";
+            cout << "[ 4 ] Вода\n";
+            cout << "[ 5 ] Солнце\n";
+            cout << "[ 6 ] Стол\n";
+            cout << "[ 7 ] Окно\n";
+            cout << "[ 8 ] Ручка\n";
+            cout << "[ 9 ] Город\n";
+            cout << "[ 10 ] Машина\n";
+            
+
+            cout << "[ 3 ] Выберите номер слова: ";
+            cin >> wordNumber;
+
+            cout << "\n[ + ] Перевод: ";
+
+            switch (wordNumber) {
+            case 1: cout << "дом -> house"; break;
+            case 2: cout << "дорога -> road"; break;
+            case 3: cout << "книга -> book"; break;
+            case 4: cout << "вода -> water"; break;
+            case 5: cout << "солнце -> sun"; break;
+            case 6: cout << "стол -> table"; break;
+            case 7: cout << "окно -> window"; break;
+            case 8: cout << "ручка -> pen"; break;
+            case 9: cout << "город -> city"; break;
+            case 10: cout << "машина -> car"; break;
+            default: cout << "Неверный номер слова!";
+            }
+            cout << "\n\n";
+            break;
+
+        case 2: 
+            cout << "\n[ + ] Переводчик \"Список английских слов\"\n\n";
+            cout << "[ 1 ] House\n";
+            cout << "[ 2 ] Road\n";
+            cout << "[ 3 ] Book\n";
+            cout << "[ 4 ] Water\n";
+            cout << "[ 5 ] Sun\n";
+            cout << "[ 6 ] Table\n";
+            cout << "[ 7 ] Window\n";
+            cout << "[ 8 ] Pen\n";
+            cout << "[ 9 ] City\n";
+            cout << "[ 10 ] Car\n";
+            cout << "[ 3 ] Выберите номер слова: ";
+            cin >> wordNumber;
+
+            cout << "\n[ + ] Перевод: ";
+
+            switch (wordNumber) {
+            case 1: cout << "house -> дом"; break;
+            case 2: cout << "road -> дорога"; break;
+            case 3: cout << "book -> книга"; break;
+            case 4: cout << "water -> вода"; break;
+            case 5: cout << "sun -> солнце"; break;
+            case 6: cout << "table -> стол"; break;
+            case 7: cout << "window -> окно"; break;
+            case 8: cout << "pen -> ручка"; break;
+            case 9: cout << "city -> город"; break;
+            case 10: cout << "car -> машина"; break;
+            default: cout << "Неверный номер слова!";
+            }
+            cout << "\n\n";
+            break;
+        case 3: 
+            Program = true;
+            cout << "\nВыход из программы...\n";
+            break;
+
+        default:
+            cout << "\nНеверный выбор! Пожалуйста, выберите 1, 2 или 3.\n\n";
+        }
+    }
+
+    return 0;
+}
