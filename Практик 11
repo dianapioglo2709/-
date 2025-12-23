@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    int chic, len;
+    char texture;
+
+    
+    cout << "[ + ] Геометрические фигуры\n\n";
+    cout << "[ 1 ] Линия\n\n";
+    cout << "[ + ] Выберите фигуру: ";
+    cin >> chic;
+
+    if (chic == 1) {
+        cout << "\n[ + ] Фигура: \"Линия\"\n\n";
+        cout << "[ 1 ] Горизонтальная\n";
+        cout << "[ 2 ] Вертикальная\n\n";
+        cout << "[ + ] Выберите тип: ";
+        cin >> chic;
+
+        if (chic == 1 || chic == 2) {
+            cout << "\n[ + ] Длина линии: ";
+            cin >> len;
+
+            cout << "[ + ] Текстура линии: ";
+            cin >> texture;
+
+            cout << "\n[ + ] Результат:\n\n";
+
+            if (chic == 1) {
+                
+                int i = 0;
+                while (i < len) {
+                    cout << texture << "  ";
+                    i++;
+                }
+            }
+            else {
+                
+                int i = 0;
+                while (i < len) {
+                    cout << texture << endl;
+                    i++;
+                }
+            }
+        }
+        else {
+            cout << "Неверный выбор типа!";
+        }
+    }
+    else {
+        cout << "Неверный выбор фигуры!";
+    }
+
+    return 0;
+}
