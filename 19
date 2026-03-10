@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+    
+    int vibor, razmer;
+    char tekstura;
+
+    // Меню
+    cout << "[ + ] Программа - \"Геометрические фигуры\"\n";
+    cout << "[ 7 ] Плюс\n";
+    cout << "[ 8 ] Ромб\n";
+    cout << "[ + ] Выберите фигуру: ";
+    cin >> vibor;
+
+    if (vibor == 8) {
+        system("cls");
+        
+        cout << "[ + ] Фигура: \"Ромб\"\n\n";
+        cout << "[ + ] Размер: ";
+        cin >> razmer;
+        cout << "\n[ + ] Текстура: ";
+        cin >> tekstura;
+        
+        cout << "\n[ + ] Результат:\n\n";
+        
+        int seredina = razmer / 2;
+        
+        // Рисуем ромб
+        for (int i = 0; i < razmer; i++) {
+            for (int j = 0; j < razmer; j++) {
+                // Условие ромба: |i - seredina| + |j - seredina| == seredina
+                if (abs(i - seredina) + abs(j - seredina) == seredina)
+                    cout << tekstura << "  ";
+                else
+                    cout << ".  ";
+            }
+            cout << "\n\n";
+        }
+    }
+
+    return 0;
+}
