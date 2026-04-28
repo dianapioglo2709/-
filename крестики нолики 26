@@ -1,0 +1,116 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(0, "");
+
+char cell[9] = { '1','2','3','4','5','6','7','8','9' };
+int scoreX = 0, scoreO = 0;
+int mode;
+
+void show() {
+    system("cls");
+    cout << "\n";
+    cout << " " << cell[0] << " | " << cell[1] << " | " << cell[2] << "\n";
+    cout << "---|---|---\n";
+    cout << " " << cell[3] << " | " << cell[4] << " | " << cell[5] << "\n";
+    cout << "---|---|---\n";
+    cout << " " << cell[6] << " | " << cell[7] << " | " << cell[8] << "\n";
+    cout << "\nСчёт: X(" << scoreX << ") : (" << scoreO << ") O\n";
+}
+
+int check() {
+    if (cell[0] == cell[1] && cell[1] == cell[2]) return (cell[0] == 'X') ? 1 : 2;
+    if (cell[3] == cell[4] && cell[4] == cell[5]) return (cell[3] == 'X') ? 1 : 2;
+    if (cell[6] == cell[7] && cell[7] == cell[8]) return (cell[6] == 'X') ? 1 : 2;
+    if (cell[0] == cell[3] && cell[3] == cell[6]) return (cell[0] == 'X') ? 1 : 2;
+    if (cell[1] == cell[4] && cell[4] == cell[7]) return (cell[1] == 'X') ? 1 : 2;
+    if (cell[2] == cell[5] && cell[5] == cell[8]) return (cell[2] == 'X') ? 1 : 2;
+    if (cell[0] == cell[4] && cell[4] == cell[8]) return (cell[0] == 'X') ? 1 : 2;
+    if (cell[2] == cell[4] && cell[4] == cell[6]) return (cell[2] == 'X') ? 1 : 2;
+
+    for (int i = 0; i < 9; i++) if (cell[i] != 'X' && cell[i] != 'O') return 0;
+    return 3; 
+}
+
+void reset() {
+    for (int i = 0; i < 9; i++) cell[i] = char('1' + i);
+}
+
+    cout << "1 - Игра с компьютером\n2 - Два игрока\nВыбери: ";
+    cin >> mode;
+
+    int turn = 1; 
+    int pos;
+
+    while (true) {
+        show();
+
+        if (turn == 1) {
+            cout << "Ход X. Номер клетки (1-9): ";
+            cin >> pos;
+            pos--;
+            if (pos < 0 || pos>8 || cell[pos] == 'X' || cell[pos] == 'O') {
+                cout << "Неправильно!\n";
+                continue;
+            }
+            cell[pos] = 'X';
+        }
+        else {
+            if (mode == 1) {
+
+                cout << "Ход компьютера...\n";
+                do {
+                    pos = rand() % 9;
+                } while (cell[pos] == 'X' || cell[pos] == 'O');
+                cell[pos] = 'O';
+            }
+            else {
+                cout << "Ход O. Номер клетки (1-9): ";
+                cin >> pos;
+                pos--;
+                if (pos < 0 || pos>8 || cell[pos] == 'X' || cell[pos] == 'O') {
+                    cout << "Неправильно!\n";
+                    continue;
+                }
+                cell[pos] = 'O';
+            }
+        }
+
+        int result = check();
+
+        if (result == 1) {
+            show();
+            cout << "ПОБЕДА! X выиграл!\n";
+            scoreX++;
+            cout << "Сыграем ещё? (1-да, 0-нет): ";
+            int again;
+            cin >> again;
+            if (again) { reset(); turn = 1; continue; }
+            else break;
+        }
+        else if (result == 2) {
+            show();
+            cout << "ПОРАЖЕНИЕ! O выиграл!\n";
+            scoreO++;
+            cout << "Сыграем ещё? (1-да, 0-нет): ";
+            int again;
+            cin >> again;
+            if (again) { reset(); turn = 1; continue; }
+            else break;
+        }
+        else if (result == 3) {
+            show();
+            cout << "НИЧЬЯ!\n";
+            cout << "Сыграем ещё? (1-да, 0-нет): ";
+            int again;
+            cin >> again;
+            if (again) { reset(); turn = 1; continue; }
+            else break;
+        }
+
+        turn = (turn == 1) ? 2 : 1;
+    }
+
+    cout << "\nФинальный счёт: X " << scoreX << " : " << scoreO << " O\n";
+    return 0;
+}
