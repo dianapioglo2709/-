@@ -1,0 +1,95 @@
+#include <iostream>
+#include <Windows.h>
+#include <conio.h>
+
+struct Player
+{
+    short x;
+    short y;
+    char texture;
+};
+
+int map[10][10] = {
+    {1,1,1,1,1,1,1,1,1,1},
+    {1,0,0,0,1,0,0,0,0,1},
+    {1,0,1,0,1,0,1,0,0,1},
+    {1,0,1,0,0,0,1,0,1,1},
+    {1,0,0,0,1,0,0,0,0,1},
+    {1,0,1,1,1,0,1,0,0,1},
+    {1,0,0,0,0,0,1,0,0,1},
+    {1,1,1,0,1,1,1,0,0,1},
+    {1,0,0,0,0,0,0,0,2,1},
+    {1,1,1,1,1,1,1,1,1,1}
+};
+
+void gotoxy(int x, int y) {
+    COORD coord;
+    coord.X = x;
+    coord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+void hideCursor() {
+    CONSOLE_CURSOR_INFO cursor;
+    cursor.bVisible = false;
+    cursor.dwSize = 100;
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor);
+}
+
+void drawMap(Player player) {
+    gotoxy(0, 0);
+    for (int y = 0; y < 10; y++) {
+        for (int x = 0; x < 10; x++) {
+            if (player.x == x && player.y == y) {
+                std::cout << "\x1b[94m" << player.texture << "\x1b[0m ";
+            }
+            else if (map[y][x] == 1) {
+                std::cout << "\x1b[90m#\x1b[0m ";
+            }
+            else if (map[y][x] == 2) {
+                std::cout << "\x1b[92mE\x1b[0m ";
+            }
+            else {
+                std::cout << "  ";
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
+int main() {
+    system("title Maze Game");
+    hideCursor();
+
+    Player player = { 1, 1, 'P' };
+
+    while (true) {
+        drawMap(player);
+
+        if (map[player.y][player.x] == 2) {
+            gotoxy(0, 12);
+            break;
+        }
+
+        char key = _getch();
+
+        switch (key) {
+        case 'w':
+            if (map[player.y - 1][player.x] != 1) player.y--;
+            break;
+        case 's':
+            if (map[player.y + 1][player.x] != 1) player.y++;
+            break;
+        case 'a':
+            if (map[player.y][player.x - 1] != 1) player.x--;
+            break;
+        case 'd':
+            if (map[player.y][player.x + 1] != 1) player.x++;
+            break;
+        }
+    }
+
+    gotoxy(0, 14);
+    system("pause");
+    return 0;
+}
